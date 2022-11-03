@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"></script>
+        <link rel="stylesheet" href="./style.css" />
+        <title>PIGGY'S ODYSSEY</title>
+    </head>
+    <body id="body" class="active">
+        <div id="up-btns">
+            <div id="l">
+                <button class="btn" onclick="darkMode()">MODE</button>
+                <input class="btn" id="play-again" type=button onClick="location.href='./game.html'"value='play again'>
+            </div>
+            <input class="btn" id="back-to-int" type=button onClick="location.href='./intro.html'"value='home'>
+        </div>
+    <audio loop autoplay>
+        <source src="./accets/sound/music_for_vikas_video_game.mp3" type="audio/mp3" id="music" >
+    </audio>
+    
+        <script src="./js/baddy.js"></script>
+        <script src="./js/portal.js"></script>
+        <script src="./js/piggies.js"></script>
+        <script src="./js/player.js"></script>
+        <script src="./js/game.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

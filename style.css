@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Silkscreen', cursive;
+    background-color: antiquewhite;
+}
+
+#game-description {
+    width: 50%;
+    margin-top:10%;
+    padding-top: 5%;
+    margin-bottom: 14%;
+    position: relative;
+    left:24%;
+    flex-direction: row;
+}
+
+#game-description h1 {
+    font-size: 340%;
+}
+
+#game-description p {
+    position: relative;
+    width: 80%;
+    bottom: 33%;
+} 
+
+.active {
+     background-color: rgb(57, 57, 57);
+}
+
+.btn{
+    background-color: rgb(253, 199, 199);
+    font-family: 'Silkscreen', cursive;
+    font-size: 100%;
+    color: rgb(57, 57, 57);
+    padding: 15px 10px 15px 10px;
+    border-radius: 5%;
+}
+
+#up-btns {  
+    width: 960px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+

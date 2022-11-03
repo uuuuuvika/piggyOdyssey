@@ -15,7 +15,7 @@ class Baddy {
         }
         this.move()
         // let c = color(200, 204, 0);
-        // fill(c, 0.5);
+        // fill(c);
         // noStroke();
         // rect(this.x + 22, this.y + 15, this.width / 2 + 2, this.height * 0.75);
          image(game.baddyImg, this.x, this.y, this.width, this.height);

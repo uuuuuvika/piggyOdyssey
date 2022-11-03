@@ -10,12 +10,19 @@ class Game {
         [{x: 100, y: 20}, {x: 500, y: 520}, {x: 200, y: 500}, {x: 800, y: 490}, {x: 500, y: 130}, {x: 770, y: 90}, {x: 560, y: 450} ].forEach((point) => {
             this.allPiggies.push(new Piggies(point.x, point.y));
         });
+        this.flowers = [{x: 540, y: 500}, {x: 100, y: 360}, {x: 790, y: 490}, {x: 560, y: 130}, {x: 70, y: 90}, {x: 512, y: 450}, {x: 270, y: 190}, {x: 812, y: 350}];
+        this.trees = [];
+        [{x: 28, y: 120}, {x: 836, y: 81}, {x: 50, y: 150}, {x: 666, y: 371}, {x: 100, y: 160}].forEach((point) => {
+            this.trees.push(new Trees(point.x, point.y));
+        });
 	}
     allObj() {
-        return this.allPiggies.concat(this.player).concat(this.baddies);
+        return this.allPiggies.concat(this.player).concat(this.baddies).concat(this.trees);
     }
     preload() {
-		this.backgroundImage = loadImage('accets/background-orange.png');
+		this.backgroundImage = loadImage('accets/background-mk.png');
+        this.flowersImage = loadImage('accets/flowers.gif');
+        this.treesImage = loadImage('accets/trees.gif')
         this.winImage = loadImage('accets/won.gif');
         this.lostImage = loadImage('accets/lost.gif');
 
@@ -43,6 +50,12 @@ class Game {
         if (this.allPiggies.length !== 0 && this.baddies.length === 2 && !this.player.caught) {
             clear();
             image(this.backgroundImage, 0, 0, width, height);
+            for(let trees of this.trees) {
+                trees.draw();
+            }
+            for(let flower of this.flowers) {
+                image(this.flowersImage, flower.x, flower.y, 30, 30);
+            }
             this.player.draw();
             for(let piggies of this.allPiggies) {    
                 piggies.draw();
@@ -68,13 +81,13 @@ class Game {
         }
         else if (this.player.caught) {
             clear ();
-            image(this.lostImage, 0, -20, width/2, height);
-            image(this.baddyImg, 400, 400, 150, 150)
+            image(this.lostImage, 0, -22, width/2, height);
+            image(this.baddyImg, 520, 400, 180, 180)
         }
         else if (this.baddies.length !== 2) {
             clear ();
-            image(this.lostImage, 0, -20, width/2, height);
-            image(this.baddyImg, 400, 400, 150, 150)
+            image(this.lostImage, 0, -22, width/2, height);
+            image(this.baddyImg, 400, 40, 150, 150)
         }     
     }
     teleport() {

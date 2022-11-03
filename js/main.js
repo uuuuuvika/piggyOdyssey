@@ -1,21 +1,19 @@
 const game = new Game();
 
 function darkMode() {
-    document.getElementById("body").classList.toggle("active");
+  document.getElementById("body").classList.toggle("active");
 }
 
 function preload() {
-    game.preload();
+  game.preload();
 }
 
 function setup() {
-    createCanvas(960, 600);
-    frameRate(4);
+  createCanvas(960, 600);
+  frameRate(4);
 }
 
 function draw() {
-	
-  
   game.draw()
 }
 

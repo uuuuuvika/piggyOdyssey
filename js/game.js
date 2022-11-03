@@ -2,24 +2,22 @@ class Game {
     constructor() {
 		this.player = new Player();
         this.portal = null;
-       // this.baddy = new Baddy();
         this.baddies = [];
         [{x: 500, y: 300}, {x: 161, y: 311}].forEach((point) => {
             this.baddies.push(new Baddy(point.x, point.y));
         });
-
         this.allPiggies = [];
         [{x: 100, y: 20}, {x: 500, y: 520}, {x: 200, y: 500}, {x: 800, y: 490}, {x: 500, y: 130}, {x: 770, y: 90}, {x: 560, y: 450} ].forEach((point) => {
             this.allPiggies.push(new Piggies(point.x, point.y));
         });
-
 	}
     allObj() {
         return this.allPiggies.concat(this.player).concat(this.baddies);
     }
     preload() {
 		this.backgroundImage = loadImage('accets/background-orange.png');
-        this.winImage = loadImage('accets/won.png');
+        this.winImage = loadImage('accets/won.gif');
+        this.lostImage = loadImage('accets/lost.gif');
 
 		this.playerImg = loadImage('accets/player-move-down-small.gif');
         this.playerMoveDown = loadImage('accets/player-move-down-small.gif');
@@ -65,25 +63,19 @@ class Game {
         }
         else if (this.allPiggies.length === 0) {
             clear ();
-            image(this.winImage, 0, -20, width, height);
+            image(this.winImage, 0, -20, width/2 , height);
             image(this.playerImg, 400, 400, 150, 150)
         }
         else if (this.player.caught) {
             clear ();
-            image(this.winImage, 0, -20, width, height);
+            image(this.lostImage, 0, -20, width/2, height);
             image(this.baddyImg, 400, 400, 150, 150)
         }
         else if (this.baddies.length !== 2) {
             clear ();
-            image(this.winImage, 0, -20, width, height);
+            image(this.lostImage, 0, -20, width/2, height);
             image(this.baddyImg, 400, 400, 150, 150)
-        }
-
-        // else if (this.baddies[0].catch === true || this.baddies[1].catch === true) {
-        //     location.href = 'loose.html';
-        // }
-
-           
+        }     
     }
     teleport() {
         if (this.portal !== null && this.portal.isActive && !this.portal.isExpired) {

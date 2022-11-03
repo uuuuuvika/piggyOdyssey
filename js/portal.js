@@ -25,9 +25,7 @@ class Portal {
             image(game.portalImg, this.x, this.y, this.width, this.height);
         }   
     }
-
     getEct() {  
-        return {x: this.x, y: this.y, w: this.width, h: this.height};
-       
-      }
+        return {x: this.x, y: this.y, w: this.width, h: this.height}; 
+    }
 }

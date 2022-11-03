@@ -18,28 +18,28 @@ class Game {
         return this.allPiggies.concat(this.player).concat(this.baddies);
     }
     preload() {
-		this.backgroundImage = loadImage('../accets/background-orange.png');
-        this.winImage = loadImage('../accets/won.png');
+		this.backgroundImage = loadImage('accets/background-orange.png');
+        this.winImage = loadImage('accets/won.png');
 
-		this.playerImg = loadImage('../accets/player-move-down-small.gif');
-        this.playerMoveDown = loadImage('../accets/player-move-down-small.gif');
-        this.playerMoveUp = loadImage('../accets/player-move-up.gif');
-        this.playerMoveRight = loadImage('../accets/player-move-right.gif');
-        this.playerMoveLeft = loadImage('../accets/player-move-left.gif');
+		this.playerImg = loadImage('accets/player-move-down-small.gif');
+        this.playerMoveDown = loadImage('accets/player-move-down-small.gif');
+        this.playerMoveUp = loadImage('accets/player-move-up.gif');
+        this.playerMoveRight = loadImage('accets/player-move-right.gif');
+        this.playerMoveLeft = loadImage('accets/player-move-left.gif');
 
-        this.piggyImg = loadImage('../accets/piggy-move-down.gif');
-        this.piggyMoveDown = loadImage('../accets/piggy-move-down.gif');
-        this.piggyMoveUp = loadImage('../accets/piggy-move-up.gif');
-        this.piggyMoveRight = loadImage('../accets/piggy-move-right.gif');
-        this.piggyMoveLeft = loadImage('../accets/piggy-move-left.gif');
+        this.piggyImg = loadImage('accets/piggy-move-down.gif');
+        this.piggyMoveDown = loadImage('accets/piggy-move-down.gif');
+        this.piggyMoveUp = loadImage('accets/piggy-move-up.gif');
+        this.piggyMoveRight = loadImage('accets/piggy-move-right.gif');
+        this.piggyMoveLeft = loadImage('accets/piggy-move-left.gif');
 
-        this.portalImg = loadImage('../accets/p3.gif');
+        this.portalImg = loadImage('accets/p3.gif');
 
-        this.baddyImg = loadImage('../accets/baddy.gif');
-        this.baddyMoveDown = loadImage('../accets/baddy.gif');
-        this.baddyMoveUp = loadImage('../accets/baddy-up.gif');
-        this.baddyMoveLeft = loadImage('../accets/baddy-left.gif');
-        this.baddyMoveRight = loadImage('../accets/baddy-ight.gif');
+        this.baddyImg = loadImage('accets/baddy.gif');
+        this.baddyMoveDown = loadImage('accets/baddy.gif');
+        this.baddyMoveUp = loadImage('accets/baddy-up.gif');
+        this.baddyMoveLeft = loadImage('accets/baddy-left.gif');
+        this.baddyMoveRight = loadImage('accets/baddy-ight.gif');
 	}
     draw() {
         if (this.allPiggies.length !== 0 && this.baddies.length === 2 && !this.player.caught) {
@@ -59,11 +59,9 @@ class Game {
             for (let baddies of this.baddies) {  
                if (baddies.catch === true) {
                 this.player.caught = true;
-    
-         }
-                baddies.draw();
             }
-            
+                baddies.draw();
+            }   
         }
         else if (this.allPiggies.length === 0) {
             clear ();

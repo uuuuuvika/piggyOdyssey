@@ -69,8 +69,6 @@ class Baddy {
     if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
         this.y += 0.2;
         game.baddyImg = game.baddyMoveDown;
-       
-    
     }
     else {
         this.di = 0;
@@ -83,8 +81,7 @@ class Baddy {
         }
     if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
       this.x -= 0.2;
-      game.baddyImg = game.baddyMoveLeft;
-     
+      game.baddyImg = game.baddyMoveLeft; 
     }
     else {
         this.di = 3;

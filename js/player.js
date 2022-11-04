@@ -17,26 +17,29 @@ class Player {
     return {x: this.x + 10, y: this.y + 10, w: this.width / 2 + 20, h: this.height / 2 + 20};
   }
   moveUp() {
-    if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 15}, game.allPiggies)) {
+    if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 15}, game.allPiggies)
+        && !ultimateCollision({...this.getEct(), y: this.y - 15}, game.trees)) {
       this.y -= 15;
-      game.playerImg = game.playerMoveUp;
-      
+      game.playerImg = game.playerMoveUp;     
     }
   }
   moveDown() {
-    if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 15}, game.allPiggies)) {
+    if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 15}, game.allPiggies)
+      && !ultimateCollision({...this.getEct(), y: this.y + 15}, game.trees)) {
       this.y += 15;
       game.playerImg = game.playerMoveDown;
     }
   }
   moveLeft() {
-    if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 15}, game.allPiggies)) {
+    if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 15}, game.allPiggies)
+      && !ultimateCollision({...this.getEct(), x: this.x - 15}, game.trees)) {
       this.x -= 15;
       game.playerImg = game.playerMoveLeft;
     }
   }
   moveRight() {
-    if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 15}, game.allPiggies)) {
+    if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 15}, game.allPiggies)
+      && !ultimateCollision({...this.getEct(), x: this.x + 15}, game.trees)) {
       this.x += 15;
       game.playerImg = game.playerMoveRight;
     }

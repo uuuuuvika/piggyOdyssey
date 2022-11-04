@@ -58,9 +58,6 @@ class Game {
             for(let piggies of this.allPiggies) {    
                 piggies.draw();
             }
-            for(let trees of this.trees) {
-                trees.draw();
-            }
             if(this.portal !== null) {
                 this.portal.draw();
                 this.teleport();
@@ -73,7 +70,10 @@ class Game {
                 this.player.caught = true;
             }
                 baddies.draw();
-            }   
+            }
+            for(let trees of this.trees) {
+                trees.draw();
+            }  
         }
         else if (this.allPiggies.length === 0) {
             clear ();
@@ -83,12 +83,12 @@ class Game {
         else if (this.player.caught) {
             clear ();
             image(this.lostImage, 0, -22, width/2, height);
-            image(this.baddyImg, 520, 400, 180, 180)
+            image(this.baddyImg, 450, 400, 200, 200)
         }
         else if (this.baddies.length !== 2) {
             clear ();
             image(this.lostImage, 0, -22, width/2, height);
-            image(this.baddyImg, 400, 40, 150, 150)
+            image(this.baddyImg, 450, 400, 200, 200)
         }     
     }
     teleport() {

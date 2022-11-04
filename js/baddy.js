@@ -4,7 +4,6 @@ class Baddy {
         this.height = 133;
         this.y = y;
         this.x = x;
-
         this.di = Math.floor(Math.random() * 4); // 0 1 2 3 
         this.dirArray = ["up", "down", "left", "right"];
         this.catch = false;
@@ -21,8 +20,7 @@ class Baddy {
          image(game.baddyImg, this.x, this.y, this.width, this.height);
      }
     move() {
-        let chooseDir = this.dirArray[this.di];
-     
+        const chooseDir = this.dirArray[this.di];
             if(chooseDir === "up") { 
                 for(let i = 0; i < 50; i++){
                     this.moveUp();
@@ -44,60 +42,55 @@ class Baddy {
                 }
             }
     }
-
-  getEct() {  
+    getEct() {  
     return {x: this.x + 22, y: this.y + 15, w: this.width / 2 + 2, h: this.height * 0.75};
-  }
-
-  moveUp() {
-    if(collision(this.getEct(), game.player.getEct())) {
-        this.catch = true;
-      } 
-    if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
-      this.y -= 0.2;
-      game.baddyImg = game.baddyMoveUp;
-        
     }
-    else {
-        this.di = 1;
-    }
-  }
-  moveDown() {
-    if(collision(this.getEct(), game.player.getEct())) {
-        this.catch = true;
-    }
-    if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
-        this.y += 0.2;
-        game.baddyImg = game.baddyMoveDown;
-    }
-    else {
-        this.di = 0;
-    }
-}
-
-  moveLeft() {
-    if(collision(this.getEct(), game.player.getEct())) {
-        this.catch = true;
+    moveUp() {
+        if(collision(this.getEct(), game.player.getEct())) {
+            this.catch = true;
+        } 
+        if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+            this.y -= 0.2;
+            game.baddyImg = game.baddyMoveUp;       
         }
-    if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
-      this.x -= 0.2;
-      game.baddyImg = game.baddyMoveLeft; 
-    }
-    else {
-        this.di = 3;
-    }
-}
-  moveRight() {
-    if(collision(this.getEct(), game.player.getEct())) {
-        this.catch = true;
-    
+        else {
+            this.di = 1;
         }
-    if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
-      this.x += 0.2;
-      game.baddyImg = game.baddyMoveRight;
     }
-    else {
-        this.di = 2;
+    moveDown() {
+        if(collision(this.getEct(), game.player.getEct())) {
+            this.catch = true;
+        }
+        if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+            this.y += 0.2;
+            game.baddyImg = game.baddyMoveDown;
+        }
+        else {
+            this.di = 0;
+        }
     }
-  }
+    moveLeft() {
+        if(collision(this.getEct(), game.player.getEct())) {
+            this.catch = true;
+        }
+        if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+            this.x -= 0.2;
+            game.baddyImg = game.baddyMoveLeft; 
+        }
+        else {
+            this.di = 3;
+        }
+    }
+    moveRight() {
+        if(collision(this.getEct(), game.player.getEct())) {
+            this.catch = true;
+        }
+        if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+            this.x += 0.2;
+            game.baddyImg = game.baddyMoveRight;
+        }
+        else {
+            this.di = 2;
+        }
+    }
 }

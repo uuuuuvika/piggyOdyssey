@@ -8,7 +8,6 @@ class Portal {
         this.isExpired = false;
         this.createdTime = frameCount;
     }
-
     draw () {
         const timePassed = frameCount - this.createdTime;
         if (timePassed > 10) {

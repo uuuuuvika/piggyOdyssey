@@ -12,7 +12,7 @@ class Game {
         });
         this.flowers = [{x: 540, y: 500}, {x: 100, y: 360}, {x: 790, y: 490}, {x: 560, y: 130}, {x: 70, y: 90}, {x: 512, y: 450}, {x: 270, y: 190}, {x: 812, y: 350}];
         this.trees = [];
-        [{x: 28, y: 120}, {x: 836, y: 81}, {x: 50, y: 150}, {x: 666, y: 371}, {x: 100, y: 160}].forEach((point) => {
+        [{x: 8, y: 120}, {x: 836, y: 81}, {x: 30, y: 150}, {x: 666, y: 371}, {x: 80, y: 160}].forEach((point) => {
             this.trees.push(new Trees(point.x, point.y));
         });
 	}
@@ -22,7 +22,8 @@ class Game {
     preload() {
 		this.backgroundImage = loadImage('accets/background-mk.png');
         this.flowersImage = loadImage('accets/flowers.gif');
-        this.treesImage = loadImage('accets/trees.gif')
+        this.treesImage = loadImage('accets/trees.gif');
+
         this.winImage = loadImage('accets/won.gif');
         this.lostImage = loadImage('accets/lost.gif');
 
@@ -50,15 +51,15 @@ class Game {
         if (this.allPiggies.length !== 0 && this.baddies.length === 2 && !this.player.caught) {
             clear();
             image(this.backgroundImage, 0, 0, width, height);
-            for(let trees of this.trees) {
-                trees.draw();
-            }
             for(let flower of this.flowers) {
                 image(this.flowersImage, flower.x, flower.y, 30, 30);
             }
             this.player.draw();
             for(let piggies of this.allPiggies) {    
                 piggies.draw();
+            }
+            for(let trees of this.trees) {
+                trees.draw();
             }
             if(this.portal !== null) {
                 this.portal.draw();
@@ -95,7 +96,5 @@ class Game {
             this.allPiggies = this.allPiggies.filter(piggy => !collision(this.portal.getEct(), piggy.getEct()));
             this.baddies = this.baddies.filter(baddy => !collision(this.portal.getEct(), baddy.getEct()));
         }   
-
     }
-
 }

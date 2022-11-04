@@ -4,16 +4,12 @@ class Piggies {
         this.height = 75;
         this.y = y;
         this.x = x;
-        //Direction
         this.di = Math.floor(Math.random() * 4); // 0 1 2 3 
         this.dirArray = ["up", "down", "right", "left"];
-        //this.createdTime = frameCount;
     }
-  
-    draw() {
-        
-        if ( frameCount % 20 === 0) { //ev they gonna get the same di!!
-            this.di = Math.floor(Math.random() * 4); // how to mak ut uniqu???
+    draw() {       
+        if ( frameCount % 20 === 0) {
+            this.di = Math.floor(Math.random() * 4);
             if (this.di === 0 && this.y < 150) {
                 this.di = 1;
             }
@@ -28,19 +24,14 @@ class Piggies {
             }
         }
         this.genMove()
-    
         // let c = color(200, 204, 0);
         // fill(c, 0.5);
         // noStroke();
         // rect(this.x + 10, this.y + 10, this.width / 2 + 10, this.height/2+10) ;
-    
-        image(game.piggyImg, this.x, this.y, this.width, this.height);
-    
+        image(game.piggyImg, this.x, this.y, this.width, this.height);   
     }
-    genMove() { //
-       // const timePassed = frameCount - this.createdTime;
-        let chooseDir = this.dirArray[this.di];
-
+    genMove() {
+        const chooseDir = this.dirArray[this.di];
             if(chooseDir === "up") { 
                 for(let i = 0; i < 30; i++){
                     this.moveUp();
@@ -61,13 +52,11 @@ class Piggies {
                     this.moveLeft();
                 }
             }
-    }
-       
+    }     
     getEct() {
         return {x: this.x + 10, y: this.y + 10, w: this.width / 2 + 10, h: this.height/2 + 10};
     }
-
-    moveUp() { //&& !ultimateCollision({...this.getEct(), y: this.y + 0.07}, game.all)
+    moveUp() {
         if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.y -= 0.2;
             game.piggyImg = game.piggyMoveUp;
@@ -84,7 +73,6 @@ class Piggies {
         else {
             this.di = 0;
         }
-
     }
     moveLeft() {
         if (this.x > 0  && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {

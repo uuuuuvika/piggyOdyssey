@@ -5,9 +5,6 @@ class Player {
     this.x = 360;
     this.y = 20;
     this.caught = false;
-    // make consts
-    // organise the images(try to make them the same size ;D)
-    // make the obstacles 
   }
   draw() {
     // let c = color(200, 204, 0);
@@ -16,11 +13,9 @@ class Player {
     // rect(this.x + 10, this.y + 10, this.width / 2 + 20, this.height / 2 + 20);
     image(game.playerImg, this.x, this.y, this.width, this.height);
   }
-
   getEct() {  
     return {x: this.x + 10, y: this.y + 10, w: this.width / 2 + 20, h: this.height / 2 + 20};
   }
- 
   moveUp() {
     if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 15}, game.allPiggies)) {
       this.y -= 15;

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap');
-
 body {
     display: flex;
     justify-content: center;
@@ -8,7 +7,6 @@ body {
     font-family: 'Silkscreen', cursive;
     background-color: antiquewhite;
 }
-
 #game-description {
     width: 50%;
     margin-top:10%;
@@ -18,26 +16,21 @@ body {
     left:24%;
     flex-direction: row;
 }
-
 i {
     font-size: 300%;
     font-weight: 900;
 }
-
 #game-description h1 {
     font-size: 340%;
 }
-
 #game-description p {
     position: relative;
     width: 80%;
     bottom: 33%;
 } 
-
 .active {
      background-color: rgb(57, 57, 57);
 }
-
 .btn{
     background-color: rgb(248, 183, 15);
     font-family: 'Silkscreen', cursive;
@@ -46,7 +39,6 @@ i {
     padding: 15px 10px 15px 10px;
     border-radius: 5%;
 }
-
 #up-btns {  
     width: 960px;
     margin-top: 2%;

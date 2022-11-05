@@ -8,7 +8,7 @@ function preload() {
 }
 function setup() {
   createCanvas(960, 600);
-  frameRate(4);
+  frameRate(5);
 }
 function draw() {
   game.draw()

@@ -26,7 +26,7 @@ i {
 #game-description p {
     position: relative;
     width: 80%;
-    bottom: 33%;
+   
 } 
 .active {
      background-color: rgb(57, 57, 57);
@@ -46,5 +46,8 @@ i {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+}
+foot p {
+    text-align: right;
 }
 

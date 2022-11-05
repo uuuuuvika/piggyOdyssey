@@ -4,7 +4,7 @@ class Baddy {
         this.height = 133;
         this.y = y;
         this.x = x;
-        this.di = Math.floor(Math.random() * 4); // 0 1 2 3 
+        this.di = Math.floor(Math.random() * 4);
         this.dirArray = ["up", "down", "left", "right"];
         this.catch = false;
     }
@@ -49,7 +49,7 @@ class Baddy {
         if(collision(this.getEct(), game.player.getEct())) {
             this.catch = true;
         } 
-        if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y + 15 - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.y -= 0.2;
             game.baddyImg = game.baddyMoveUp;       
         }
@@ -61,7 +61,7 @@ class Baddy {
         if(collision(this.getEct(), game.player.getEct())) {
             this.catch = true;
         }
-        if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if ((this.y < height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 15 + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.y += 0.2;
             game.baddyImg = game.baddyMoveDown;
         }
@@ -73,7 +73,7 @@ class Baddy {
         if(collision(this.getEct(), game.player.getEct())) {
             this.catch = true;
         }
-        if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.x > 0 && !ultimateCollision({...this.getEct(), x: this.x + 22 - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.x -= 0.2;
             game.baddyImg = game.baddyMoveLeft; 
         }
@@ -85,7 +85,7 @@ class Baddy {
         if(collision(this.getEct(), game.player.getEct())) {
             this.catch = true;
         }
-        if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if ((this.x < width - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 22 + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.x += 0.2;
             game.baddyImg = game.baddyMoveRight;
         }

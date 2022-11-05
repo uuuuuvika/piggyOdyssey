@@ -16,18 +16,18 @@ function draw() {
 
 function keyPressed() {
   switch (keyCode) {
-    case RIGHT_ARROW:
-      game.player.moveRight();
-      break;
-    case LEFT_ARROW:
-      game.player.moveLeft();
-      break;
-    case UP_ARROW:
-      game.player.moveUp();
-      break;
-    case DOWN_ARROW:
-      game.player.moveDown();
-      break;
+    // case RIGHT_ARROW:
+    //   game.player.moveRight();
+    //   break;
+    // case LEFT_ARROW:
+    //   game.player.moveLeft();
+    //   break;
+    // case UP_ARROW:
+    //   game.player.moveUp();
+    //   break;
+    // case DOWN_ARROW:
+    //   game.player.moveDown();
+    //   break;
     case SHIFT:
       if(game.portal === null) {
         game.portal = new Portal(game.player.x, game.player.y);

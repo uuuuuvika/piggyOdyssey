@@ -4,7 +4,7 @@ class Piggies {
         this.height = 75;
         this.y = y;
         this.x = x;
-        this.di = Math.floor(Math.random() * 4); // 0 1 2 3 
+        this.di = Math.floor(Math.random() * 4);
         this.dirArray = ["up", "down", "right", "left"];
     }
     draw() {       
@@ -57,7 +57,7 @@ class Piggies {
         return {x: this.x + 10, y: this.y + 10, w: this.width / 2 + 10, h: this.height/2 + 10};
     }
     moveUp() {
-        if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.y > 0 && !ultimateCollision({...this.getEct(), y: this.y + 10 - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.y -= 0.2;
             game.piggyImg = game.piggyMoveUp;
         }
@@ -66,7 +66,7 @@ class Piggies {
         }
     }
     moveDown() {
-        if (this.y < (height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.y < (height - this.height) && !ultimateCollision({...this.getEct(), y: this.y + 10 + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.y += 0.2;
             game.piggyImg = game.piggyMoveDown;
         }
@@ -75,7 +75,7 @@ class Piggies {
         }
     }
     moveLeft() {
-        if (this.x > 0  && !ultimateCollision({...this.getEct(), x: this.x - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.x > 0  && !ultimateCollision({...this.getEct(), x: this.x + 10 - 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.x -= 0.2;
             game.piggyImg = game.piggyMoveLeft;
         }
@@ -84,7 +84,7 @@ class Piggies {
         }
     }
     moveRight() {
-        if (this.x < (600 - this.width) && !ultimateCollision({...this.getEct(), x: this.x + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
+        if (this.x < (600 - this.width) && !ultimateCollision({...this.getEct(), x: this.x  + 10 + 0.2}, listoThingsWithoutObj(game.allObj(), this))) {
             this.x += 0.2;
            game.piggyImg = game.piggyMoveRight;
         }

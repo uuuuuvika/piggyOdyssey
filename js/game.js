@@ -3,11 +3,11 @@ class Game {
 		this.player = new Player();
         this.portal = null;
         this.baddies = [];
-        [{x: 500, y: 300}, {x: 161, y: 311}].forEach((point) => {
+        [{x: 500, y: 300}, {x: 570, y: 100}, {x: 161, y: 311}].forEach((point) => {
             this.baddies.push(new Baddy(point.x, point.y));
         });
         this.allPiggies = [];
-        [{x: 100, y: 20}, {x: 500, y: 520}, {x: 200, y: 500}, {x: 800, y: 490}, {x: 500, y: 130}, {x: 770, y: 90}, {x: 560, y: 450} ].forEach((point) => {
+        [{x: 100, y: 20}, {x: 700, y: 324}, {x: 500, y: 520}, {x: 200, y: 500}, {x: 800, y: 490}, {x: 500, y: 130}, {x: 770, y: 90}, {x: 560, y: 450} ].forEach((point) => {
             this.allPiggies.push(new Piggies(point.x, point.y));
         });
         this.flowers = [{x: 540, y: 500}, {x: 100, y: 360}, {x: 790, y: 490}, {x: 560, y: 130}, {x: 70, y: 90}, {x: 512, y: 450}, {x: 270, y: 190}, {x: 812, y: 350}];
@@ -48,28 +48,28 @@ class Game {
         this.baddyMoveRight = loadImage('accets/baddy-ight.gif');
 	}
     draw() {
-        if (this.allPiggies.length !== 0 && this.baddies.length === 2 && !this.player.caught) {
+        if (this.allPiggies.length !== 0 && this.baddies.length === 3 && !this.player.caught) {
             clear();
             image(this.backgroundImage, 0, 0, width, height);
-            for(let flower of this.flowers) {
+            for (let flower of this.flowers) {
                 image(this.flowersImage, flower.x, flower.y, 30, 30);
             }
             this.player.draw();
-            for(let piggies of this.allPiggies) {    
+            for (let baddies of this.baddies) {  
+                if (baddies.catch === true) {
+                    this.player.caught = true;
+                }
+                baddies.draw();
+            }    
+            for (let piggies of this.allPiggies) {    
                 piggies.draw();
             }
-            if(this.portal !== null) {
+            if (this.portal !== null) {
                 this.portal.draw();
                 this.teleport();
                 if(this.portal.isExpired) {
                     this.portal = null;
                 }
-            }
-            for (let baddies of this.baddies) {  
-               if (baddies.catch === true) {
-                this.player.caught = true;
-            }
-                baddies.draw();
             }
             for(let trees of this.trees) {
                 trees.draw();
@@ -85,7 +85,7 @@ class Game {
             image(this.lostImage, 0, -22, width/2, height);
             image(this.baddyImg, 450, 400, 200, 200)
         }
-        else if (this.baddies.length !== 2) {
+        else if (this.baddies.length !== 3) {
             clear ();
             image(this.lostImage, 0, -22, width/2, height);
             image(this.baddyImg, 450, 400, 200, 200)

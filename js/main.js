@@ -7,7 +7,8 @@ function preload() {
   game.preload();
 }
 function setup() {
-  createCanvas(960, 600);
+  const myCanvas = createCanvas(960, 600);
+  myCanvas.parent("canvas");
   frameRate(5);
 }
 function draw() {

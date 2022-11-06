@@ -20,6 +20,10 @@ i {
     font-size: 300%;
     font-weight: 900;
 }
+span i{
+    font-size: 150%;
+    font-weight: 900;
+}
 #game-description h1 {
     font-size: 340%;
 }

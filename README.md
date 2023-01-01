@@ -6,4 +6,4 @@ is a small Java Script (p5) game that I created as my first project at Ironhack.
 
 https://uuuuuvika.github.io/piggyOdyssey/
 
-P.S. this game features beautiful music composed by @erwald 
+this game features beautiful music composed by https://github.com/erwald 

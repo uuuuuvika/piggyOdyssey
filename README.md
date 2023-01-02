@@ -1,6 +1,6 @@
 # Piggy Odyssey
 
-is a small Java Script (p5) game that I created as my first project at Ironhack. 
+is a small Java Script (p5) game that I programmed and drew as my first project at Ironhack. 
 
 You play as an extraterrestrial pig who is on a mission to rescue all of the pigs on Earth, which have been captured by humans and are being held in farms and slaughterhouses. Using your alien powers, you must free them.
 
@@ -8,4 +8,4 @@ You play as an extraterrestrial pig who is on a mission to rescue all of the pig
 
 https://uuuuuvika.github.io/piggyOdyssey/
 
-this game features beautiful music composed by https://github.com/erwald 
+**this game features beautiful music composed by <a href="https://github.com/erwald">erwald</a>

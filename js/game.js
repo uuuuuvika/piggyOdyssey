@@ -20,7 +20,7 @@ class Game {
         return this.allPiggies.concat(this.player).concat(this.baddies).concat(this.trees);
     }
     preload() {
-		this.backgroundImage = loadImage('accets/background-mk.png');
+		this.backgroundImage = loadImage('accets/background-mk2.png');
         this.flowersImage = loadImage('accets/flowers.gif');
         this.treesImage = loadImage('accets/trees.gif');
 
